@@ -56,11 +56,13 @@ namespace data_soruce_mil.models
             set => city = value;
         }
 
-        public string Zipcode
+        public byte Zipcode
         {
             get => zipcode;
             set => zipcode = value;
         }
+        public string Color { get; internal set; }
+        public string Size { get; internal set; }
 
         private string brand;
         private string type;
@@ -71,7 +73,7 @@ namespace data_soruce_mil.models
         private string email;
         private int phone;
         private string city;
-        private string zipcode;
+        private byte zipcode;
         public TestPurchaseIntention()
         {
         }
