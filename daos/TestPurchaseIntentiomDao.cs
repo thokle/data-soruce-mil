@@ -48,9 +48,9 @@ namespace data_soruce_mil.daos
         }
     }
 
-    class Mapper
+    public  class Mapper
     {
-        internal static tblTestPurchase MapTo(TestPurchaseIntention purchaseIntention)
+        public static tblTestPurchase MapTo(TestPurchaseIntention purchaseIntention)
         {
             var t = new tblTestPurchase();
             t.brand = purchaseIntention.Brand;
