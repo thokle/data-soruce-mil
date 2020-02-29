@@ -37,8 +37,7 @@ namespace data_soruce_mil.daos
                 Color = p.color,
                 Comment = p.comment,
                 Email = p.email,
-                Name = p.name
-                                        ,
+                Name = p.name,
                 Price = p.price.Value,
                 Size = p.size,
                 Type = p.type,
