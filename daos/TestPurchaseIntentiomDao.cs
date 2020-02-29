@@ -24,14 +24,29 @@ namespace data_soruce_mil.daos
         {
 
             return (from p in groccitEntities.tblTestPurchases
-                    select new TestPurchaseIntention()
-                    {
-                        Brand = p.brand, City = p.city, Color = p.color, Comment = p.comment, Email = p.email, Name = p.name, Phone = int.Parse(p.phone), Price  = p.price.GetValueOrDefault(), Size = p.size, Type = p.type, Url = p.url, Zipcode = p.postnr.GetValueOrDefault() 
-                    }).ToList();
-                
+                    select NewMethod(p)).ToList();
+
         }
 
-
+        private static TestPurchaseIntention NewMethod(tblTestPurchase p)
+        {
+            return new TestPurchaseIntention()
+            {
+                Brand = p.brand,
+                City = p.city,
+                Color = p.color,
+                Comment = p.comment,
+                Email = p.email,
+                Name = p.name
+                                        ,
+                Price = p.price.Value,
+                Size = p.size,
+                Type = p.type,
+                Url = p.url,
+                Zipcode = p.postnr.Value,
+                Phone = p.phone
+            };
+        }
     }
 
     class Mapper

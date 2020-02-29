@@ -44,7 +44,7 @@ namespace data_soruce_mil.models
             set => email = value;
         }
 
-        public int Phone
+        public string Phone
         {
             get => phone;
             set => phone = value;
@@ -71,7 +71,7 @@ namespace data_soruce_mil.models
         private string comment;
         private string name;
         private string email;
-        private int phone;
+        private string phone;
         private string city;
         private byte zipcode;
         public TestPurchaseIntention()
