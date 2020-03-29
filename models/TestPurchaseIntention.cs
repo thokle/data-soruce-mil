@@ -8,10 +8,10 @@ namespace data_soruce_mil.models
             set => brand = value;
         }
 
-        public string Type
+        public string Types
         {
-            get => type;
-            set => type = value;
+            get => types;
+            set => types = value;
         }
 
         public decimal Price
@@ -63,9 +63,10 @@ namespace data_soruce_mil.models
         }
         public string Color { get; internal set; }
         public string Size { get; internal set; }
+        public string Model { get => model; set => model = value; }
 
         private string brand;
-        private string type;
+        private string types;
         private decimal price;
         private string url;
         private string comment;
@@ -74,6 +75,7 @@ namespace data_soruce_mil.models
         private string phone;
         private string city;
         private byte zipcode;
+        private string model;
         public TestPurchaseIntention()
         {
         }

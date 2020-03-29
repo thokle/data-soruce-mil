@@ -3,7 +3,14 @@ using data_soruce_mil.models;
 
 namespace data_soruce_mil.services
 {
-    public class UserService
+   public interface IUserService
+    {
+         User CreateOrUpdate(User user);
+         User GetUserByCredentials(string username, string password);
+        bool DeleteUser(User user);
+    }
+
+    public class UserService: IUserService
     {
         private UserDao _userDao;
         public UserService(UserDao dao)

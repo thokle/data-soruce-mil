@@ -9,15 +9,16 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>data_soruce_mil</RootNamespace>
     <AssemblyName>data-soruce-mil</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\groccit-rest-api\libs\</OutputPath>
+    <OutputPath>..\groccit-ss-web-rest-api\groccit_ss_web_rest_api.ServiceInterface\lib\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -51,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="daos\TestPurchaseIntentiomDao.cs" />
+    <Compile Include="daos\TestPurchaseIntentionDao.cs" />
     <Compile Include="daos\UserDao.cs" />
     <Compile Include="database_firewall_rules.cs">
       <DependentUpon>Groccit.tt</DependentUpon>

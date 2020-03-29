@@ -5,14 +5,21 @@ using data_soruce_mil.models;
 
 namespace data_soruce_mil.services
 {
-    public class TestPurhaseIntentionService
-    {
-        private TestPurchaseIntentiomDao _intentiomDao;
 
-        public TestPurhaseIntentionService(TestPurchaseIntentiomDao purchaseIntentiomDao)
-        {
-            _intentiomDao = purchaseIntentiomDao;
-        }
+    public interface ITestPurhaseIntentionService
+    {
+
+        bool CreateTestPurchaseIntention(TestPurchaseIntention purchaseIntention);
+        List<TestPurchaseIntention> GetTestPurchaseIntentions();
+
+
+    }
+    public class TestPurhaseIntentionService : ITestPurhaseIntentionService
+    {
+        private TestPurchaseIntentionDao _intentiomDao;
+
+
+        public TestPurhaseIntentionService() => _intentiomDao = new TestPurchaseIntentionDao();
 
 
         public bool CreateTestPurchaseIntention(TestPurchaseIntention purchaseIntention)

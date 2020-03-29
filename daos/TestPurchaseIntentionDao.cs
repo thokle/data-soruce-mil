@@ -5,11 +5,11 @@ using  data_soruce_mil.models;
 using System.Linq;
 namespace data_soruce_mil.daos
 {
-    public class TestPurchaseIntentiomDao
+    public class TestPurchaseIntentionDao
     {
         private groccitEntities groccitEntities;
 
-        public TestPurchaseIntentiomDao()
+        public TestPurchaseIntentionDao()
         {
             groccitEntities = new groccitEntities();
         }
@@ -24,7 +24,24 @@ namespace data_soruce_mil.daos
         {
 
             return (from p in groccitEntities.tblTestPurchases
-                    select NewMethod(p)).ToList();
+                    select new TestPurchaseIntention()
+                    {
+
+                        Brand = p.brand,
+                        City = p.city,
+                        Color = p.color,
+                        Comment = p.comment,
+                        Email = p.email,
+                        Name = p.name,
+                        Price = p.price.Value,
+                        Size = p.size,
+                        Types = p.type,
+                        Url = p.url,
+                        Zipcode = p.postnr.Value,
+                        Phone = p.phone,
+                        Model = p.model
+                        
+                    }).ToList();
 
         }
 
@@ -32,18 +49,7 @@ namespace data_soruce_mil.daos
         {
             return new TestPurchaseIntention()
             {
-                Brand = p.brand,
-                City = p.city,
-                Color = p.color,
-                Comment = p.comment,
-                Email = p.email,
-                Name = p.name,
-                Price = p.price.Value,
-                Size = p.size,
-                Type = p.type,
-                Url = p.url,
-                Zipcode = p.postnr.Value,
-                Phone = p.phone
+               
             };
         }
     }
@@ -63,13 +69,13 @@ namespace data_soruce_mil.daos
             t.postnr = purchaseIntention.Zipcode;
             t.price = purchaseIntention.Price;
             t.size = purchaseIntention.Size;
-            t.type = purchaseIntention.Type;
+            t.type = purchaseIntention.Types;
             t.url = purchaseIntention.Url;
-            
+            t.model = purchaseIntention.Model;
             return t;
 
         }
     }
-
+   
 
 }

@@ -27,5 +27,6 @@ namespace data_soruce_mil
         public string phone { get; set; }
         public string name { get; set; }
         public string comment { get; set; }
+        public string model { get; set; }
     }
 }
